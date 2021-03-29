@@ -1,0 +1,21 @@
+CREATE DATABASE IF NOT EXISTS tweetApp;
+
+USE tweetApp;
+
+CREATE TABLE User(
+firtName VARCHAR(20) DEFAULT '' NOT NULL,
+lastName VARCHAR(20),
+gender VARCHAR(20) NOT NULL,
+dateOfBirth DATE,
+emailId VARCHAR(50) NOT NULL UNIQUE,
+password VARCHAR(50) NOT NULL,
+isLoggedIn BOOLEAN,
+PRIMARY KEY(emailId)
+);
+
+CREATE TABLE tweet(
+tweetId int(11) NOT NULL AUTO_INCREMENT,
+tweetMessage VARCHAR(50) DEFAULT '' NOT NULL,
+emailId VARCHAR(50),
+PRIMARY KEY(tweetId)
+);
